@@ -1,0 +1,193 @@
+
+/* Création des animations */
+
+@keyframes animationcolor {
+  0%   { color: yellow; }
+  25%  { color: orange; }
+  50% { color: red; }
+  75%  { color: orange; }
+  100%  { color: yellow; }
+}
+
+@keyframes AutoSlide {
+  0%, 15%, 100% {
+    left: 0px;
+  }
+  35%, 50% {
+    left: -100%;
+  }
+  70%, 85% {
+    left: -200%;
+  }
+}
+
+/* Fin animation */
+
+/* NavBar */
+
+nav {
+	width:90%; 
+	margin: 5px auto;
+	height: 50px;
+	display: flex;
+	flex-direction:row;
+	background-color: #ccc;
+	align-items: stretch;
+	text-align: center;
+}
+
+.nav-item:hover > a::before {
+	content: "► ";
+}
+.nav-item:hover > a::after {
+	content: " ◄";
+}
+
+.nav-accueil {
+	background-color: #999;
+}
+
+nav div {
+	display: flex;
+	position: relative;
+	width:100%;
+	align-items: center;
+	justify-content: center;
+}
+
+nav>div:hover {
+	background-color: #bbb;
+}
+
+nav a {
+	padding: 10px auto;
+	color: black;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+nav a:visited {
+	text-decoration: none;
+}
+
+nav>div:hover .submenu{
+	display: inline;
+}
+
+.submenu{
+	background-color: #777;
+	display: none;
+	position: absolute;
+	top:50px;
+	left: 0px;
+	width:100%;
+}
+
+.submenu .nav-item a{
+	color: #ddd;
+	font-size: 14px;
+	padding: 5px;
+}
+
+/* Fin NavBar */
+
+/* Slide Accueil */
+
+.slideshow {
+	position: relative;
+	width: 400px;
+	height: 30vh;
+	margin:  20px auto 0px auto;
+	overflow: hidden;
+}
+
+.animated li {
+	display: inline;
+}
+
+.animated {
+	position: absolute;
+	width: 300%;
+	margin: 0;
+	padding: 0;
+	
+	animation-name: AutoSlide;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in;
+}
+
+/* Fin Slide */
+
+/* Definition globale */
+
+header {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+body {
+	background-color: #e2e2e2;
+}
+
+main {
+	padding-bottom: 2%;
+}
+
+.row {
+	margin: auto 5%;
+	padding: 2%;
+}
+
+.borderseparate1 {
+	border: 2px solid black;
+	width: 70%;
+	margin : 30px 15%;
+	height: 0px;
+}
+
+.borderseparate2 {
+	border: 2px solid white;
+	width: 70%;
+	margin : 50px 15%;
+	height: 0px;
+}
+
+h1 {
+	text-align: center;
+	margin: auto;
+	color: white;
+
+}
+
+h1.gun::before{
+	content: "︻┳═一 ";
+	animation-name: animationcolor;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-out;
+}
+h1.gun::after {
+	content: " 一═┳︻";
+	animation-name: animationcolor;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-out;
+}
+
+.justi {
+	text-align: justify;
+}
+
+.tsize17 {
+	font-size: 17px;
+}
+
+.b1 {
+	background-color: #828282
+}
+
+.cb {
+	color: black;
+}
